@@ -33,7 +33,19 @@ namespace WebApplication3.Models
         public int version { get; set; }
 
     }
-     
+    public class Db
+    {
+        public int Id{ get; set; }
+    }
+    public class Entity
+    {
+        public  int color { get; set; }
+        public int model{ get; set; }
+        public  int fuel { get; set; }
+        public int city { get; set; }
+        public  int make { get; set; }
+        public  int version { get; set; } 
+    }
     public class Color
     {
             public int color { get; set; }

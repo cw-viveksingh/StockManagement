@@ -107,33 +107,37 @@ namespace WebApplication3.Controllers
                 par.Add("fuel_id", stockObj.fuelType);
                 par.Add("version_id", stockObj.version);
 
-                Color colorObj = new Color();
-                Model modelObj = new Model();
-                Fuel fuelObj = new Fuel();
-                City cityObj = new City();
-                Make makeObj = new Make();
-                Versions versionObj = new Versions();
+                Entity Obj = new Entity();
+            
                 IDbConnection connectionOne = new MySqlConnection(ConfigurationManager.ConnectionStrings["myconn"].ConnectionString);
                 using (var multi = connectionOne.QueryMultiple("verify", par, commandType: CommandType.StoredProcedure))
                 {
 
-                    colorObj = multi.Read<Color>().First();
-                    modelObj = multi.Read<Model>().First();
-                    fuelObj = multi.Read<Fuel>().First();
-                    cityObj = multi.Read<City>().First();
-                    makeObj = multi.Read<Make>().First();
-                    versionObj = multi.Read<Versions>().First();
-                    // return Ok(colorObj.color + " " + modelObj.model + " " + fuelObj.fuel + " " + cityObj.city + " " + makeObj.make + " " + versionObj.version);
+                    Obj = multi.Read<Entity>().First();
+                   
                 }
-                int check = colorObj.color * modelObj.model * fuelObj.fuel * cityObj.city * makeObj.make * versionObj.version;
+         
+                int check = Obj.color * Obj.model * Obj.fuel * Obj.city * Obj.make * Obj.version;
                 if (check != 1)
                     return BadRequest("Wrong Parameters");
-                IDbConnection connectionOne = new MySqlConnection(ConfigurationManager.ConnectionStrings["myconn"].ConnectionString);
-                using (var multi = connectionOne.QueryMultiple())
+                par = new DynamicParameters();
+                par.Add("price",stockObj.price);
+                par.Add("yer", stockObj.year);
+                par.Add("kilometer", stockObj.kilometer);
+                par.Add("fuel_type", stockObj.fuelType);
+                par.Add("model", stockObj.model);
+                par.Add("city", stockObj.city);
+                par.Add("color", stockObj.color);
+                par.Add("fueleconomy", stockObj.fuelEconomy);
+                par.Add("version", stockObj.version);
+                par.Add("make", stockObj.make);
+                IDbConnection connectionTwo = new MySqlConnection(ConfigurationManager.ConnectionStrings["myconn"].ConnectionString);
+                Db temp = new Db();
+                using (var multi = connectionTwo.QueryMultiple("table_insert", par, commandType: CommandType.StoredProcedure))
                 {
-
+                    temp = multi.Read<Db>().First();
                 }
-                return Ok("Your stock is Added to the Database");
+                return Ok("http://localhost:52227/api/Stock/stocks/" + temp.Id);
             }
             catch (Exception)
             {
