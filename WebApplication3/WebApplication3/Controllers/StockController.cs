@@ -107,5 +107,125 @@ namespace WebApplication3.Controllers
                 return InternalServerError(e);
             }
         }
+        bool isValidUpdate(int stockId, Stocks stock)
+        {
+            if (!(stock.price >= 10000 && stock.price <= 30000000))
+            {
+                //BadRequest("Please Enter a valid price b/w 10000 and 3 Crore");
+                return false;
+            }
+
+            if (!(stock.year >= 2010 && stock.year <= DateTime.Today.Year))
+            {
+                //BadRequest("Please Enter a valid Date b/w 2010 and " + DateTime.Today.Year);
+                return false;
+            }
+
+            if (!(stock.kilometer >= 100 && stock.kilometer <= 300000))
+            {
+                //BadRequest("Please Enter a valid Kilometers b/w 100 and 3 Lakh");
+                return false;
+            }
+
+            if (stock.fuelEconomy != -1)
+                if (!(stock.fuelEconomy >= 1 && stock.fuelEconomy <= 50))
+                {
+                    //BadRequest("Please Enter a valid Fuel Economy b/w 1 and 50 km");
+                    return false;
+                }
+            return true;
+        }
+        DynamicParameters makeCheckParameters(Stocks stock, int stockId = 0)
+        {
+            var par = new DynamicParameters();
+            if (stockId != 0)
+                par.Add("stock_id", stockId);
+            par.Add("color_id", stock.color);
+            par.Add("model_id", stock.model);
+            par.Add("city_id", stock.city);
+            par.Add("make_id", stock.make);
+            par.Add("fuel_id", stock.fuelType);
+            par.Add("version_id", stock.version);
+            return par;
+        }
+        DynamicParameters makeParameters(Stocks stock, int stockId = 0)
+        {
+            var par = new DynamicParameters();
+            if (stockId != 0)
+                par.Add("stock_id", stockId);
+            par.Add("price", stock.price);
+            par.Add("yer", stock.year);
+            par.Add("kilometer", stock.kilometer);
+            par.Add("fuel_type", stock.fuelType);
+            par.Add("model", stock.model);
+            par.Add("city", stock.city);
+            par.Add("color", stock.color);
+            par.Add("fueleconomy", stock.fuelEconomy);
+            par.Add("version", stock.version);
+            par.Add("make", stock.make);
+            return par;
+        }
+        bool isValidInDB(Stocks stock)
+        {
+            var par = makeCheckParameters(stock);
+            Entity Obj = new Entity();
+            IDbConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["myconn"].ConnectionString);
+            using (var multi = conn.QueryMultiple("verify", par, commandType: CommandType.StoredProcedure))
+            {
+                Obj = multi.Read<Entity>().First();
+            }
+            int check = Obj.color * Obj.model * Obj.fuel * Obj.city * Obj.make * Obj.version;
+            if (check != 1)
+                return false;
+            return true;
+        }
+        bool updateDb(Stocks stock, int stockId)
+        {
+            var par = makeParameters(stock, stockId);
+            IDbConnection connectionTwo = new MySqlConnection(ConfigurationManager.ConnectionStrings["myconn"].ConnectionString);
+            Db temp = new Db();
+            using (var multi = connectionTwo.QueryMultiple("table_update", par, commandType: CommandType.StoredProcedure))
+            {
+                temp = multi.Read<Db>().First();
+            }
+            if (temp.Id == 1)
+                return true;
+            else
+                return false;
+
+            // Ok("http://localhost:52227/api/Stock/stocks/" + temp.Id);
+
+
+        }
+        [HttpPut, Route("api/Stock/{stockId}")]
+        public IHttpActionResult Put(int stockId, [FromBody]Stocks stock)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+                if (isValidUpdate(stockId, stock))
+                {
+                    if (!isValidInDB(stock))
+                    {
+                        return Ok("you are entering Invalid data... its not in our Database");
+                    }
+                    if (updateDb(stock, stockId))
+                        return Ok("updated successfully");
+                    else
+                        return Ok("this ID not found");
+
+                }
+                else
+                {
+                    return Ok("you are not adding valid data");
+                }
+            }
+            catch (Exception)
+            {
+
+                return InternalServerError();
+            }
+        }
     }
 }
