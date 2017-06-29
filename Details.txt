@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 Hey testing nishaant ashutosh
+=======
+Hey testing nishaant hello
+hola
+>>>>>>> c32df9cf9b947d2f0f3619dcca1d0db98b1dca77
