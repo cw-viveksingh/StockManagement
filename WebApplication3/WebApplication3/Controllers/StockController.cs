@@ -83,7 +83,7 @@ namespace WebApplication3.Controllers
             }
         }
         //[HttpDelete]
-        [Route("api/Stock/stocks/{id}")]
+        [Route("api/Stock/{id}")]
         public IHttpActionResult Delete(int id)
         {
             try
