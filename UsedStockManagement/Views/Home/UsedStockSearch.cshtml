@@ -1,0 +1,61 @@
+﻿@model IEnumerable<UsedStockManagement.Models.UsedCarStock>
+
+<!doctype html>
+
+<html lang="en">
+<head>
+    <title>Used Cars</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/Scripts/script.js"></script>
+    <style>
+        .centered { 
+            background: white; 
+            margin: 0 auto; 
+            width: 550px;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered">
+        <div>
+            <table>
+               <colgroup>
+                   <col width="220" />
+                   <col width="300" />
+                   <col width="50" />
+               </colgroup>
+                <tr>
+                    <td>
+                        <span>Fileter by location:</span>
+                        <select id="location">
+                            <option value="all" selected="selected">all cities</option>
+                            <option value="mumbai">mumbai</option>
+                            <option value="delhi">delhi</option>
+                        </select>
+                    </td>
+                    <td>
+                        <span>Filter by budget</span>
+                        <select id="minBudget">
+                            <option value=0 selected="selected">Min</option>
+                            <option value=5000> > 5000</option>
+                            <option value=15000> > 15000 </option>
+                        </select>
+
+                        <select id="maxBudget">
+                            <option value=2147483647 selected="selected">Max</option>
+                            <option value=1000000> < 1000000</option>
+                            <option value=20000> < 20000 </option>
+                        </select>
+                    </td>
+                    <td>
+                        <button id="filterSearch" type="button">Go</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="listingStock">
+            @{Html.RenderPartial("~/Views/Shared/_bindCarResult.cshtml", Model);}
+        </div>
+    </div>
+</body>
+</html>
