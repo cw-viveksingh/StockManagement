@@ -58,7 +58,6 @@ namespace UsedStockManagement.Models
         }
 
         private string _imgURL;
-
         public string ImgURL
         {
             get { return _imgURL; }
@@ -95,11 +94,17 @@ namespace UsedStockManagement.Models
         }
 
         private int _isDeleted;
-
         public int IsDeleted
         {
             get { return _isDeleted; }
             set { _isDeleted = value; }
+        }
+
+        private DateTime _dateAdded;
+        public DateTime DateAdded
+        {
+            get { return _dateAdded; }
+            set { _dateAdded = value; }
         }
         
     }

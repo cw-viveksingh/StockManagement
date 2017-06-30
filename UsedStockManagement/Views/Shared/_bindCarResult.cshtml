@@ -1,4 +1,6 @@
-﻿@model IEnumerable<UsedStockManagement.Models.UsedCarStock>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<UsedStockManagement.Models.UsedCarStock>
 
 @{
     ViewBag.Title = "_bindCarResult";
@@ -23,7 +25,7 @@
             <br/>
         </li>
     }
-
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, city = Request.QueryString["city"], minBudget = Request.QueryString["minBudget"], maxBudget = Request.QueryString["maxBudget"] }))
 </ul>
 
 
