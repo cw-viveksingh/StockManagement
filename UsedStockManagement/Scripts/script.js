@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     $('#filterSearch').click(function () {
         
-        var filterURL = "/UsedStock/FilterSearch/?";
+        var filterURL = "/UsedStock/Index/?";
         var city = $("select#location option:checked").val();
         var minBudget = $("select#minBudget option:checked").val();
         var maxBudget = $("select#maxBudget option:checked").val();
@@ -17,13 +17,7 @@
             filterURL += "minBudget=" + minBudget;
             filterURL += "&maxBudget=" + maxBudget;
         }
-
-        $("#listingStock").load(filterURL, function (response, status) {
-            if (status == "error") {
-                console.log("error");
-            }
-        });
-        //window.location.href = filterURL;
+        window.location.href = filterURL;
     });
 });
 

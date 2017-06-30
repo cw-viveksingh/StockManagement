@@ -1,4 +1,6 @@
-﻿@model IEnumerable<UsedStockManagement.Models.UsedCarStock>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<UsedStockManagement.Models.UsedCarStock>
 
 <!doctype html>
 
@@ -48,7 +50,7 @@
                         </select>
                     </td>
                     <td>
-                        <button id="filterSearch" type="button">Go</button>
+                        <button id="filterSearch" type="button" >Go</button>
                     </td>
                 </tr>
             </table>
