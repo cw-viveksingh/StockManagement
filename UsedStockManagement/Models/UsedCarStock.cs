@@ -5,6 +5,7 @@ using System.Web;
 
 namespace UsedStockManagement.Models
 {
+    [Serializable]
     public class UsedCarStock
     {
 

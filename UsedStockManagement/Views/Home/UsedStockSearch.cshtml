@@ -56,7 +56,43 @@
             </table>
         </div>
         <div id="listingStock">
-            @{Html.RenderPartial("~/Views/Shared/_bindCarResult.cshtml", Model);}
+            <ul style="list-style:none; padding:0px;">
+                @foreach (var obj in Model)
+                {
+                    <li>
+                        <table border="0">
+                            <colgroup>
+                                <col width="300" />
+                                <col width="50" />
+                                <col width="100" />
+                                <col width="100" />
+                                <col width="100" />
+                            </colgroup>
+                            <tr>
+                                <td rowspan="3" align="center">
+                                    <img src="~/Content/@obj.ImgURL" alt="car image" style="width:230px;height:150px;" />
+                                <td></td>
+                                <td colspan="2" align="left"> @obj.Make @obj.Model @obj.Version</td>
+                                <td class="car_id" hidden>@obj.StockId</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td colspan="2" align="left">$ @obj.Price </td>
+                                <td align="center">@obj.City</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td align="left">@obj.Kilometer km </td>
+                                <td>@obj.FuelType</td>
+                                <td align="center">@obj.Year</td>
+                            </tr>
+                        </table>
+                        <button class="search" type="button">Get Details</button>
+                        <br />
+                    </li>
+                }
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, city = Request.QueryString["city"], minBudget = Request.QueryString["minBudget"], maxBudget = Request.QueryString["maxBudget"] }))
+            </ul>
         </div>
     </div>
 </body>

@@ -1,0 +1,29 @@
+﻿@model UsedStockManagement.Models.Details
+
+<!DOCTYPE html>
+<html>
+<!-- <link rel="stylesheet" href="~/CSS/style.css"> -->
+<head>
+    <h1> Car Details </h1>
+</head>
+
+<body>
+    <div>Price = @Model.price</div>
+    <div>Year = @Model.yer</div>
+    <div>Kilometer = @Model.kilometer</div>
+
+    <div>Fuel Type = @Model.fuelType</div>
+    @if (@Model.fuelEconomy != -1)
+    {
+        <div>Fuel Economy = @Model.fuelEconomy</div>
+    }
+
+    <div>City = @Model.city</div>
+    <div>Color = @Model.color</div>
+
+    <div>Make = @Model.make</div>
+    <div>Model = @Model.model</div>
+
+    <div>Version = @Model.version</div>
+</body>
+</html>

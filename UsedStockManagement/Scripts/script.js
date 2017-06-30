@@ -19,5 +19,11 @@
         }
         window.location.href = filterURL;
     });
+    $('.search').click(function() {
+        var id = $(this).parent().find(".car_id").text();
+        window.location.href = "/StockDetail/Info/" + id;
+        }
+     )
+
 });
 
