@@ -42,9 +42,24 @@
     <Reference Include="Dapper">
       <HintPath>..\..\..\..\..\Downloads\Dapper\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="Elasticsearch.Net">
+      <HintPath>..\..\..\..\dll\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Enyim.Caching">
+      <HintPath>..\..\..\..\dll\Enyim.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Gelf4Net">
+      <HintPath>..\..\..\..\dll\Gelf4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\dll\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data">
       <HintPath>..\..\..\..\..\Downloads\Dapper\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Nest">
+      <HintPath>..\..\..\..\dll\Nest.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -107,6 +122,9 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="UsedStockManagement">
+      <HintPath>..\..\UsedStockManagement\bin\UsedStockManagement.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -206,6 +224,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="ElasticClientInstance.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -257,7 +276,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -283,6 +304,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

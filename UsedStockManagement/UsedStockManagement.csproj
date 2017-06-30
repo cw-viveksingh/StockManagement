@@ -61,6 +61,14 @@
     <Reference Include="Nest">
       <HintPath>..\..\..\..\..\Downloads\Testing\Nest.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RabbitMqPublishing">
       <HintPath>..\..\..\..\..\Downloads\TestingMemcache\RabbitMqPublishing.dll</HintPath>
     </Reference>
@@ -178,21 +186,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\StockDetailController.cs" />
     <Compile Include="Controllers\UsedStockController.cs" />
     <Compile Include="ElasticSearchClient\ElasticClientInstance.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Details.cs" />
     <Compile Include="Models\UsedCarStock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\script.js" />
+    <Content Include="style\Style.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -211,11 +223,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
+    <Folder Include="Views\StockDetail\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_bindCarResult.cshtml" />
+    <Content Include="Views\Home\StockDetails.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

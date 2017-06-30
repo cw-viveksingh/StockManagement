@@ -6,11 +6,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication3.Models
 {
+   // [Serializable]
     public class Stocks
     {
         Stocks()
         {
             this.fuelEconomy = -1;
+            this.dateAdded = DateTime.Now;
+            this.isDeleted = 0;
+            this.imgURL = "car.jpg";
         }
         [Required]
         public decimal price{get; set;}
@@ -31,7 +35,11 @@ namespace WebApplication3.Models
         public int model { get; set; }
         [Required]
         public int version { get; set; }
-
+        public int stockId { get; set; }
+        public int isDeleted { get; set; }
+        public DateTime dateAdded { get; set; }
+        public string imgURL { get; set; }
+       
     }
     public class Db
     {

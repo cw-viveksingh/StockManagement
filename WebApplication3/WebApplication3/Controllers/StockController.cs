@@ -1,5 +1,8 @@
 ﻿using Dapper;
+using Enyim.Caching;
+using Enyim.Caching.Memcached;
 using MySql.Data.MySqlClient;
+using Nest;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,29 +17,29 @@ namespace WebApplication3.Controllers
 {
     public class StockController : ApiController
     {
-        
+        private static ElasticClient elasticClient = ElasticClientInstance.GetInstance();
         [HttpPost]
         public IHttpActionResult Post([FromBody]Stocks stockObj)
         {
             try
             {
                 if (!ModelState.IsValid)
-                     return BadRequest(ModelState);
-                
+                    return BadRequest(ModelState);
+
                 if (!(stockObj.price >= 10000 && stockObj.price <= 30000000))
-                     return BadRequest("Please Enter a valid price b/w 10000 and 3 Crore");
-                
+                    return BadRequest("Please Enter a valid price b/w 10000 and 3 Crore");
+
                 if (!(stockObj.year >= 2010 && stockObj.year <= DateTime.Today.Year))
-                     return BadRequest("Please Enter a valid Date b/w 2010 and " + DateTime.Today.Year);
-                
+                    return BadRequest("Please Enter a valid Date b/w 2010 and " + DateTime.Today.Year);
+
                 if (!(stockObj.kilometer >= 100 && stockObj.kilometer <= 300000))
-                     return BadRequest("Please Enter a valid Kilometers b/w 100 and 3 Lakh");
-                
+                    return BadRequest("Please Enter a valid Kilometers b/w 100 and 3 Lakh");
+
                 if (stockObj.fuelEconomy != -1)
-                     if (!(stockObj.fuelEconomy >= 1 && stockObj.fuelEconomy <= 50))
-                          return BadRequest("Please Enter a valid Fuel Economy b/w 1 and 50 km");                    
- 
-                
+                    if (!(stockObj.fuelEconomy >= 1 && stockObj.fuelEconomy <= 50))
+                        return BadRequest("Please Enter a valid Fuel Economy b/w 1 and 50 km");
+
+
                 var par = new DynamicParameters();
                 par.Add("color_id", stockObj.color);
                 par.Add("model_id", stockObj.model);
@@ -46,20 +49,20 @@ namespace WebApplication3.Controllers
                 par.Add("version_id", stockObj.version);
 
                 Entity Obj = new Entity();
-            
+
                 IDbConnection connectionOne = new MySqlConnection(ConfigurationManager.ConnectionStrings["myconn"].ConnectionString);
                 using (var multi = connectionOne.QueryMultiple("verify", par, commandType: CommandType.StoredProcedure))
                 {
 
                     Obj = multi.Read<Entity>().First();
-                   
+
                 }
-         
+
                 int check = Obj.color * Obj.model * Obj.fuel * Obj.city * Obj.make * Obj.version;
                 if (check != 1)
                     return BadRequest("Wrong Parameters");
                 par = new DynamicParameters();
-                par.Add("price",stockObj.price);
+                par.Add("price", stockObj.price);
                 par.Add("yer", stockObj.year);
                 par.Add("kilometer", stockObj.kilometer);
                 par.Add("fuel_type", stockObj.fuelType);
@@ -71,10 +74,17 @@ namespace WebApplication3.Controllers
                 par.Add("make", stockObj.make);
                 IDbConnection connectionTwo = new MySqlConnection(ConfigurationManager.ConnectionStrings["myconn"].ConnectionString);
                 Db temp = new Db();
+                //connectionTwo.Execute("table_insert", par, commandType: CommandType.StoredProcedure);
                 using (var multi = connectionTwo.QueryMultiple("table_insert", par, commandType: CommandType.StoredProcedure))
                 {
                     temp = multi.Read<Db>().First();
                 }
+                stockObj.stockId = temp.Id;
+                var index = elasticClient.Index(stockObj, i => i
+                                    .Index("usedstock")
+                                    .Type("usedcarstock")
+                                    .Id("id" + stockObj.stockId)
+                                );
                 return Ok("http://localhost:52227/api/Stock/stocks/" + temp.Id);
             }
             catch (Exception e)
@@ -92,6 +102,16 @@ namespace WebApplication3.Controllers
                 Check obj = new Check();
                 var par = new DynamicParameters();
                 par.Add("par_id", id);
+                try
+                {
+                    MemcachedClient client = new MemcachedClient();
+                    client.Remove("memid" + id.ToString());
+
+                }
+                catch (Exception)
+                {                    
+                    throw;
+                } 
                 using (var multi = connectionTwo.QueryMultiple("check_exist", par, commandType: CommandType.StoredProcedure))
                 {
                     obj = multi.Read<Check>().First();
@@ -99,7 +119,14 @@ namespace WebApplication3.Controllers
                 if (obj.exist == 0)
                     return BadRequest("The Stock Id You Entered Is Wrong!!!");
                 else
-                    return Ok("Data Deleted Successfully");
+                {
+                    var index = elasticClient.Delete(elasticClient, i => i
+                                    .Index("usedstock")
+                                    .Type("usedcarstock")
+                                    .Id("id" + id)
+                                );
+                    return Ok("Data Deleted Successfully"); 
+                }
             }
             catch (Exception e)
             {
@@ -109,6 +136,7 @@ namespace WebApplication3.Controllers
         }
         bool isValidUpdate(int stockId, Stocks stock)
         {
+            //return true;
             if (!(stock.price >= 10000 && stock.price <= 30000000))
             {
                 //BadRequest("Please Enter a valid price b/w 10000 and 3 Crore");
@@ -182,17 +210,42 @@ namespace WebApplication3.Controllers
         bool updateDb(Stocks stock, int stockId)
         {
             var par = makeParameters(stock, stockId);
-            IDbConnection connectionTwo = new MySqlConnection(ConfigurationManager.ConnectionStrings["myconn"].ConnectionString);
             Db temp = new Db();
-            using (var multi = connectionTwo.QueryMultiple("table_update", par, commandType: CommandType.StoredProcedure))
-            {
-                temp = multi.Read<Db>().First();
-            }
-            if (temp.Id == 1)
-                return true;
-            else
-                return false;
 
+            try
+            {
+
+                using (MemcachedClient mc = new MemcachedClient())
+                {
+                    var obj = mc.Get("memid" + stockId.ToString());
+                    if (obj != null)
+                        mc.Remove("memid" + stockId.ToString());
+                    IDbConnection connectionTwo = new MySqlConnection(ConfigurationManager.ConnectionStrings["myconn"].ConnectionString);
+                    using (var multi = connectionTwo.QueryMultiple("table_update", par, commandType: CommandType.StoredProcedure))
+                    {
+                        temp = multi.Read<Db>().First();
+                    }
+
+                }
+                if (temp.Id == 1){
+                    stock.stockId = stockId;
+                    var index = elasticClient.Index(stock, i => i
+                                        .Index("usedstock")
+                                        .Type("usedcarstock")
+                                        .Id("id" + stock.stockId)
+                                    );
+                    return true;
+                }
+                    
+                else
+                    return false;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             // Ok("http://localhost:52227/api/Stock/stocks/" + temp.Id);
 
 
@@ -206,25 +259,25 @@ namespace WebApplication3.Controllers
                     return BadRequest(ModelState);
                 if (isValidUpdate(stockId, stock))
                 {
-                    if (!isValidInDB(stock))
+                    /*if (!isValidInDB(stock))
                     {
-                        return Ok("you are entering Invalid data... its not in our Database");
-                    }
+                        return BadRequest("You are entering Invalid data... its not in our Database!!!");
+                    }*/
                     if (updateDb(stock, stockId))
-                        return Ok("updated successfully");
+                        return Ok("Updated Successfully");
                     else
-                        return Ok("this ID not found");
+                        return BadRequest("This ID not found!!");
 
                 }
                 else
                 {
-                    return Ok("you are not adding valid data");
+                    return BadRequest("You are not adding valid data!!!");
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                return InternalServerError();
+                return InternalServerError(e);
             }
         }
     }
