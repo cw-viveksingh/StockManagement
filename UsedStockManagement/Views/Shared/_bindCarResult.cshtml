@@ -1,26 +1,30 @@
-﻿@using PagedList;
-@using PagedList.Mvc;
-@model IPagedList<UsedStockManagement.Models.UsedCarStock>
+﻿@model IEnumerable<UsedStockManagement.Models.UsedCarStock>
 
 @{
     ViewBag.Title = "_bindCarResult";
 }
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/Scripts/script.js"></script>
+</head>
 
 <ul style="list-style:none; padding:0px;">
-    @foreach (var obj in Model)
-    {
+    
+    @for (int i = 0, count = (Model.Count() == 5)? 4: Model.Count(); i < count ; i++ )
+    {     
+        var obj = Model.ElementAt(i);
         <li>
             <table border="0">
                 <colgroup>
-                    <col width="300"/>
+                    <col width="300" />
                     <col width="50" />
-                    <col width="100"/>
+                    <col width="100" />
                     <col width="100" />
                     <col width="100" />
                 </colgroup>
                 <tr>
                     <td rowspan="3" align="center">
-                    <img src="~/Content/@obj.ImgURL" alt="car image" style="width:230px;height:150px;" />
+                        <img src="~/Content/@obj.ImgURL" alt="car image" style="width:230px;height:150px;" />
                     <td></td>
                     <td colspan="2" align="left"> @obj.Make @obj.Model @obj.Version</td>
                     <td class="car_id" hidden>@obj.StockId</td>
@@ -34,15 +38,24 @@
                     <td></td>
                     <td align="left">@obj.Kilometer km </td>
                     <td>@obj.FuelType</td>
-                    <td align ="center">@obj.Year</td>
+                    <td align="center">@obj.Year</td>
                 </tr>
             </table>
-            <button class ="search" type="button">Get Details</button>
-            <br/>
+            <button class="search" type="button">Get Details</button>
+            <br />
         </li>
     }
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, city = Request.QueryString["city"], minBudget = Request.QueryString["minBudget"], maxBudget = Request.QueryString["maxBudget"] }))
 </ul>
 
+@if (Model.Count() < 5)
+{
+    <script>
+        $('#nextResult').prop('disabled', true);
+    </script>
+}
 
-
+<!--
+<script>
+    appendListingData(Html.Raw(Json.Encode(Model)));
+</script>
+-->
