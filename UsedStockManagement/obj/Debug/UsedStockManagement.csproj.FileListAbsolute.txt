@@ -1,0 +1,126 @@
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\UsedStockManagement.dll.config
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\UsedStockManagement.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\UsedStockManagement.pdb
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Antlr3.Runtime.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Dapper.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Elasticsearch.Net.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\EntityFramework.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\EntityFramework.SqlServer.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Enyim.Caching.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Gelf4Net.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\log4net.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Google.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Web.Infrastructure.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\MySql.Data.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Nest.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Newtonsoft.Json.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Owin.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\RabbitMqPublishing.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.Helpers.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.Mvc.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.Optimization.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.Razor.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.WebPages.Deployment.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.WebPages.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.WebPages.Razor.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\WebGrease.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\RabbitMQ.Client.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\RabbitMqPublishing.pdb
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.Helpers.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.Mvc.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.Optimization.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.Razor.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.WebPages.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.WebPages.Deployment.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\System.Web.WebPages.Razor.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Antlr3.Runtime.pdb
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Newtonsoft.Json.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\EntityFramework.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\EntityFramework.SqlServer.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Google.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\obj\Debug\UsedStockManagement.csprojResolveAssemblyReference.cache
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\obj\Debug\UsedStockManagement.dll
+c:\users\vivek.tomar\documents\visual studio 2013\Projects\UsedStockManagement\UsedStockManagement\obj\Debug\UsedStockManagement.pdb
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\UsedStockManagement.dll.config
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\UsedStockManagement.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\UsedStockManagement.pdb
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Antlr3.Runtime.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\EntityFramework.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\EntityFramework.SqlServer.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Newtonsoft.Json.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Owin.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.Helpers.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.Mvc.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.Optimization.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.Razor.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.WebPages.Deployment.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.WebPages.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.WebPages.Razor.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\WebGrease.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\RabbitMQ.Client.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\RabbitMqPublishing.pdb
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.Helpers.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.Mvc.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.Optimization.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.Razor.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.WebPages.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.WebPages.Deployment.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\System.Web.WebPages.Razor.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Antlr3.Runtime.pdb
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Newtonsoft.Json.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\EntityFramework.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\EntityFramework.SqlServer.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\obj\Debug\UsedStockManagement.csprojResolveAssemblyReference.cache
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\obj\Debug\UsedStockManagement.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\obj\Debug\UsedStockManagement.pdb
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\PagedList.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\PagedList.Mvc.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\PagedList.xml
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\bin\PagedList.Mvc.xml
