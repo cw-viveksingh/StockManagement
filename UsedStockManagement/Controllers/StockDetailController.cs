@@ -41,10 +41,9 @@ namespace UsedStockManagement.Controllers
             }
             catch (Exception e)
             {
-
                 throw;
             }
-            UsedCarStock usedCarStock = new UsedCarStock();
+            UsedCarStock usedCarStock = new UsedCarStock();          
             usedCarStock.FuelType = (String)mc.Get("usFuelType" + obj.fuelType.ToString());
             usedCarStock.City = (String)mc.Get("usCity" + obj.city.ToString());
             usedCarStock.Color = (String)mc.Get("usColor" + obj.color.ToString());
