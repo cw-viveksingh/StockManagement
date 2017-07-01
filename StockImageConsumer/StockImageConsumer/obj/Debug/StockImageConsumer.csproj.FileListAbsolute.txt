@@ -1,0 +1,7 @@
+c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\bin\Debug\StockImageConsumer.pdb
+c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\bin\Debug\MySql.Data.dll
+c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\bin\Debug\RabbitMQ.Client.dll
+c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.csprojResolveAssemblyReference.cache
+c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.pdb
+c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\bin\Debug\StockImageConsumer.exe
+c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.exe
