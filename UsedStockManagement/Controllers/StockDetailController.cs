@@ -21,10 +21,11 @@ namespace UsedStockManagement.Controllers
             var par = new DynamicParameters();
             par.Add("par_id", id);
             Details obj = new Details();
+            MemcachedClient mc = new MemcachedClient();
             try
             {
 
-                MemcachedClient mc = new MemcachedClient();
+                
                 obj = (Details)mc.Get("memid" + id.ToString());
                 if (obj == null)
                 {
@@ -43,7 +44,18 @@ namespace UsedStockManagement.Controllers
 
                 throw;
             }
-            return View("~/Views/Home/StockDetails.cshtml", obj);
+            UsedCarStock usedCarStock = new UsedCarStock();
+            usedCarStock.FuelType = (String)mc.Get("usFuelType" + obj.fuelType.ToString());
+            usedCarStock.City = (String)mc.Get("usCity" + obj.city.ToString());
+            usedCarStock.Color = (String)mc.Get("usColor" + obj.color.ToString());
+            usedCarStock.Make = (String)mc.Get("usMake" + obj.make.ToString());
+            usedCarStock.Model = (String)mc.Get("usModel" + obj.model.ToString());
+            usedCarStock.Version = (String)mc.Get("usVersion" + obj.version.ToString());
+            usedCarStock.Price = obj.price;
+            usedCarStock.Kilometer = obj.kilometer;
+            usedCarStock.Year = obj.yer;
+            usedCarStock.FuelEconomy = (decimal)(obj.fuelEconomy == -1 ? -1:(obj.fuelEconomy) );
+            return View("~/Views/Home/StockDetails.cshtml", usedCarStock);
         }
     }
 }
