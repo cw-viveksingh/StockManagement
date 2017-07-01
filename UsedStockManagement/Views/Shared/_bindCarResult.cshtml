@@ -3,7 +3,12 @@
 @{
     ViewBag.Title = "_bindCarResult";
 }
-
+<script>
+    $('.search').click(function () {
+        var id = $(this).parent().find(".car_id").text();
+        window.location.href = "/StockDetail/Info/" + id;
+    });
+</script>
 <ul style="list-style:none; padding:0px;">
     
     @for (int i = 0, count = (Model.Count() == 5)? 4: Model.Count(); i < count ; i++ )

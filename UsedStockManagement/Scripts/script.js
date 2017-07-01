@@ -15,12 +15,14 @@
             console.log("error occured");
         }
     });
+
 }
 
 var city = "all";
 var minBudget = 0;
 var maxBudget = 2147483647;
 var page = 1;
+
 
 $(document).ready(function () {
     console.log("ready ready");
@@ -37,13 +39,13 @@ $(document).ready(function () {
         if (page == 1) {
             $('#previousResult').prop('disabled', true);
         }
-        loadData("/UsedStock/FilterSearch/?page=" + page);
+        loadData();
     });
 
     $('#nextResult').click(function () {
         page += 1;
         $('#previousResult').prop('disabled', false);
-        loadData("/UsedStock/FilterSearch/?page=" + page);
+        loadData();
     });
 
     $('#filterSearch').click(function () {
@@ -53,7 +55,7 @@ $(document).ready(function () {
         page = 1;
         $('#previousResult').prop('disabled', true);
         $('#nextResult').prop('disabled', false);
-        loadData("/UsedStock/FilterSearch/?page=" + page);
+        loadData();
     });
 
     $('.search').click(function () {
