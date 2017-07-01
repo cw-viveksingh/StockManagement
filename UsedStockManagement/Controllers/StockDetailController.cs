@@ -54,6 +54,7 @@ namespace UsedStockManagement.Controllers
             usedCarStock.Kilometer = obj.kilometer;
             usedCarStock.Year = obj.yer;
             usedCarStock.FuelEconomy = (decimal)(obj.fuelEconomy == -1 ? -1:(obj.fuelEconomy) );
+            usedCarStock.StockId = id;
             return View("~/Views/Home/StockDetails.cshtml", usedCarStock);
         }
     }

@@ -96,7 +96,7 @@ namespace StockImageConsumer
             WebResponse imageResponse = null;
             Stream responseStream = null;
             bool isImageSaved = false;
-            string saveLocation = @"C:\Users\ashutosh.udeniya\Pictures\normal-" + key + ".jpg";
+            string saveLocation = @"C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\Images\normal-" + key + ".jpg";
             string ret = null;
             try
             {
@@ -164,8 +164,8 @@ namespace StockImageConsumer
                 Bitmap pic1 = ResizeImage(pic, 310, 174);
                 Bitmap pic2 = ResizeImage(pic, 640, 348);
                 pic.Dispose();
-                string pic1Path = @"C:\Users\ashutosh.udeniya\Pictures\small-" + key + ".jpg";
-                string pic2Path = @"C:\Users\ashutosh.udeniya\Pictures\medium-" + key + ".jpg";
+                string pic1Path = @"C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\Images\small-" + key + ".jpg";
+                string pic2Path = @"C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\Images\medium-" + key + ".jpg";
                 Directory.CreateDirectory(Path.GetDirectoryName(pic1Path));
                 Directory.CreateDirectory(Path.GetDirectoryName(pic2Path));
                 pic1.Save(pic1Path, System.Drawing.Imaging.ImageFormat.Jpeg);

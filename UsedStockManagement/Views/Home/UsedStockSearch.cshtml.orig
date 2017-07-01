@@ -1,0 +1,84 @@
+﻿@model IEnumerable<UsedStockManagement.Models.UsedCarStock>
+
+<!doctype html>
+
+<html lang="en">
+<head>
+    <title>Used Cars</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/Scripts/script.js"></script>
+    <style>
+        .centered { 
+            background: white; 
+            margin: 0 auto; 
+            width: 550px;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered">
+        <div>
+            <table>
+               <colgroup>
+                   <col width="220" />
+                   <col width="300" />
+                   <col width="50" />
+               </colgroup>
+                <tr>
+                    <td>
+                        <span>Fileter by location:</span>
+                        <select id="location">
+                            <option value="all" selected="selected">all cities</option>
+<<<<<<< HEAD
+                            <option value="Mumbai">mumbai</option>
+                            <option value="delhi">delhi</option>
+=======
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Panvel">Panvel</option>
+                            <option value="Bhopal">Bhopal</option>
+                            <option value="New Delhi">New Delhi</option>
+                            <option value="Kalyan">Kalyan</option>
+                            <option value="Giridih">Giridih</option>
+>>>>>>> c8d204a9fc66bfa52270f17baa2b77a562613688
+                        </select>
+                    </td>
+                    <td>
+                        <span>Filter by budget</span>
+                        <select id="minBudget">
+                            <option value=0 selected="selected">Min</option>
+                            <option value=0>  Any </option>
+                            <option value=100000>  1 Lakh</option>
+                            <option value=300000>  3 Lakh </option>
+                            <option value=400000>  4 Lakh</option>
+                            <option value=600000>  6 Lakh </option>
+                            <option value=800000>  8 Lakh</option>
+                            <option value=1200000>  12 Lakh </option>
+                            <option value=2000000>  20 Lakh</option>
+                        </select>
+
+                        <select id="maxBudget">
+                            <option value=2147483647 selected="selected">Max</option>
+                            <option value=100000>  1 Lakh</option>
+                            <option value=300000>  3 Lakh </option>
+                            <option value=400000>  4 Lakh</option>
+                            <option value=600000>  6 Lakh </option>
+                            <option value=800000>  8 Lakh</option>
+                            <option value=1200000>  12 Lakh </option>
+                            <option value=2000000>  20 Lakh</option>
+                            <option value=2147483647>  Any </option>
+                        </select>
+                    </td>
+                    <td>
+                        <button id="filterSearch" type="button" >Go</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="listingStock">
+            @Html.Partial("~/Views/Shared/_bindCarResult.cshtml", Model);
+        </div>
+        <button id="previousResult" type="button">previous</button>
+        <button id="nextResult" type="button">next</button>
+    </div>
+</body>
+</html>

@@ -5,3 +5,9 @@ c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsum
 c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.pdb
 c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\bin\Debug\StockImageConsumer.exe
 c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.exe
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.exe
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.pdb
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\StockImageConsumer\StockImageConsumer\bin\Debug\StockImageConsumer.exe
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\StockImageConsumer\StockImageConsumer\bin\Debug\StockImageConsumer.pdb
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\StockImageConsumer\StockImageConsumer\bin\Debug\MySql.Data.dll
+C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.csprojResolveAssemblyReference.cache
