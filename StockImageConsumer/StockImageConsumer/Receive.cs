@@ -135,7 +135,7 @@ namespace StockImageConsumer
             {
                 Console.WriteLine(ex.ToString());
                 return ret;
-                throw;
+                //throw;
             }
             finally
             {
@@ -147,7 +147,7 @@ namespace StockImageConsumer
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
-                    throw;
+                    ////throw;
                 }
             }
         }
@@ -176,7 +176,7 @@ namespace StockImageConsumer
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                throw;
+                //throw;
             }
 
         }

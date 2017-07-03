@@ -5,3 +5,8 @@ c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsum
 c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.pdb
 c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\bin\Debug\StockImageConsumer.exe
 c:\users\ashutosh.udeniya\documents\visual studio 2013\Projects\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.exe
+C:\Users\ashutosh.udeniya\Desktop\StockManagement\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.exe
+C:\Users\ashutosh.udeniya\Desktop\StockManagement\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.pdb
+C:\Users\ashutosh.udeniya\Desktop\StockManagement\StockImageConsumer\StockImageConsumer\bin\Debug\StockImageConsumer.exe
+C:\Users\ashutosh.udeniya\Desktop\StockManagement\StockImageConsumer\StockImageConsumer\bin\Debug\StockImageConsumer.pdb
+C:\Users\ashutosh.udeniya\Desktop\StockManagement\StockImageConsumer\StockImageConsumer\obj\Debug\StockImageConsumer.csprojResolveAssemblyReference.cache

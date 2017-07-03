@@ -26,8 +26,8 @@ namespace StockImageProducer.Controllers
             }
             catch (Exception)
             {
-
-                throw;
+                return Content(HttpStatusCode.InternalServerError, "Problem in Entering the request in queue");
+                //throw;
             }
         }
     }
