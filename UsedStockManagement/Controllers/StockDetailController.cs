@@ -3,11 +3,9 @@ using Enyim.Caching;
 using Enyim.Caching.Memcached;
 using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using UsedStockManagement.Models;
 
@@ -39,9 +37,9 @@ namespace UsedStockManagement.Controllers
 
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
             UsedCarStock usedCarStock = new UsedCarStock();          
             usedCarStock.FuelType = (String)mc.Get("usFuelType" + obj.fuelType.ToString());

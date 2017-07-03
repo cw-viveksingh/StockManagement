@@ -84,7 +84,7 @@ namespace StockImageConsumer
         void processUrl(string key, string imageUrl)
         {
             String saveLocation = imageDownload(key, imageUrl);
-            if (saveLocation.Equals(null))
+            if (saveLocation.Equals(""))
                 return;
             resizeDownloaded(key, saveLocation);
             //saveImageLocation(int.Parse(key));
@@ -97,7 +97,7 @@ namespace StockImageConsumer
             Stream responseStream = null;
             bool isImageSaved = false;
             string saveLocation = @"C:\Users\nishaant.sharma\Desktop\StockManagement\StockManagement\UsedStockManagement\Images\normal-" + key + ".jpg";
-            string ret = null;
+            string ret = "";
             try
             {
 
@@ -128,14 +128,14 @@ namespace StockImageConsumer
                     fs.Close();
                     bw.Close();
                 }
-                ret = isImageSaved ? saveLocation : null;
+                ret = isImageSaved ? saveLocation : "";
                 return ret;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 return ret;
-                throw;
+                //throw;
             }
             finally
             {
@@ -147,7 +147,7 @@ namespace StockImageConsumer
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
-                    throw;
+                    //throw;
                 }
             }
         }
@@ -176,7 +176,7 @@ namespace StockImageConsumer
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                throw;
+                //throw;
             }
 
         }

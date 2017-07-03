@@ -48,13 +48,24 @@
         </li>
     }
 </ul>
-@if (Model.Count() < 5)
+<button id="previousResult" type="button">previous</button>
+<button id="nextResult" type="button">next</button> 
+<script>
+    Toggle(@Model.Count());
+</script>   
+<!--if (Model.Count() < 5)
 {
     <script>
         $('#nextResult').prop('disabled', true);
     </script>
 }
-
+else
+{
+    <script>
+        $('#nextResult').prop('disabled', false);
+    </script>
+}
+    -->
 
 <!--
 </body>

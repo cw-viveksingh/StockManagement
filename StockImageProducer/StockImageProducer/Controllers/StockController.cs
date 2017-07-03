@@ -26,8 +26,9 @@ namespace StockImageProducer.Controllers
             }
             catch (Exception)
             {
+                //throw;
+                return BadRequest("Error!!!");
 
-                throw;
             }
         }
     }
