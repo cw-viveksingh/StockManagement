@@ -3,4 +3,6 @@
 *.suo
 *.log
 *.user
+*.dll
+*.cache
 */debug
