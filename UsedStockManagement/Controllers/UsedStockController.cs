@@ -1,13 +1,8 @@
 ﻿using Nest;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using UsedStockManagement.ElasticSerchClient;
 using UsedStockManagement.Models;
-using PagedList;
-using PagedList.Mvc;
 
 namespace UsedStockManagement.Controllers
 {
@@ -18,18 +13,24 @@ namespace UsedStockManagement.Controllers
         private QueryDescriptor<UsedCarStock> query = new QueryDescriptor<UsedCarStock>();
         
         // GET: UsedStock
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, string city = null, int minBudget = 0, int maxBudget = int.MaxValue)
         {
             try
             {
-                queryContainer = query.Term(p => p.IsDeleted, 0);                                   
+                queryContainer = query.Term(p => p.IsDeleted, 0);
+                if (city != null)
+                    queryContainer &= query.Term(p => p.City, city);
+
+                if (minBudget != 0 || maxBudget != int.MaxValue)
+                    queryContainer &= query.Range(r => r.OnField(fi => fi.Price).LowerOrEquals(maxBudget).GreaterOrEquals(minBudget));
+
                 var searchResults = elasticClient.Search<UsedCarStock>(s => s
-                    .From(0)
-                    .Size(5)
-                    .Index("usedstock")
-                    .Type("usedcarstock")
-                    .Query(queryContainer)
-                );
+                                   .From((page - 1) * (5 - 1))
+                                   .Size(5)
+                                   .Index("usedstock")
+                                   .Type("usedcarstock")
+                                   .Query(queryContainer)
+                               );
                 
                 return View("~/Views/Home/UsedStockSearch.cshtml", searchResults.Documents);
             }

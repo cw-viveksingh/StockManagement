@@ -1,44 +1,73 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+﻿<!doctype html>
 
+<html lang="en">
+<head>
+    <title>Used Cars</title>
+    <style>
+        .centered {
+            background: white;
+            margin: 0 auto;
+            width: 550px;
+        }
+    </style>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <div class="centered">
+        <div>
+            <table>
+                <colgroup>
+                    <col width="220" />
+                    <col width="300" />
+                    <col width="50" />
+                </colgroup>
+                <tr>
+                    <td>
+                        <span>Fileter by location:</span>
+                        <select id="location">
+                            <option value="all" selected="selected">all cities</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Panvel">Panvel</option>
+                            <option value="Bhopal">Bhopal</option>
+                            <option value="New%20Delhi">New Delhi</option>
+                            <option value="Kalyan">Kalyan</option>
+                            <option value="Giridih">Giridih</option>
+                        </select>
+                    </td>
+                    <td>
+                        <span>Filter by budget</span>
+                        <select id="minBudget">
+                            <option value=0 selected="selected">Min</option>
+                            <option value=0>  Any </option>
+                            <option value=100000>  1 Lakh</option>
+                            <option value=300000>  3 Lakh </option>
+                            <option value=400000>  4 Lakh</option>
+                            <option value=600000>  6 Lakh </option>
+                            <option value=800000>  8 Lakh</option>
+                            <option value=1200000>  12 Lakh </option>
+                            <option value=2000000>  20 Lakh</option>
+                        </select>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+                        <select id="maxBudget">
+                            <option value=2147483647 selected="selected">Max</option>
+                            <option value=100000>  1 Lakh</option>
+                            <option value=300000>  3 Lakh </option>
+                            <option value=400000>  4 Lakh</option>
+                            <option value=600000>  6 Lakh </option>
+                            <option value=800000>  8 Lakh</option>
+                            <option value=1200000>  12 Lakh </option>
+                            <option value=2000000>  20 Lakh</option>
+                            <option value=2147483647>  Any </option>
+                        </select>
+                    </td>
+                    <td>
+                        <button id="filterSearch" type="button">Go</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        @RenderBody()
+        <button id="previousResult" type="button">previous</button>
+        <button id="nextResult" type="button">next</button>    
+    </div>    
 </body>
 </html>

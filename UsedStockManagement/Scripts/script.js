@@ -1,5 +1,10 @@
-﻿function loadData() {
-    var filterURL = "/UsedStock/FilterSearch/?page=" + page;
+﻿/*var city = "all";
+var minBudget = 0;
+var maxBudget = 2147483647;
+var page = 1;
+*/
+function loadData(page, city, minBudget, maxBudget) {
+    var filterURL = "/UsedStock/Index/?page=" + page;
     if (city != "all") {
         filterURL += "&city=" + city;
     }
@@ -9,20 +14,15 @@
         filterURL += "&maxBudget=" + maxBudget;
     }
 
-    $("#listingStock").load(filterURL, function (response, status) {
+    /*$("#listingStock").load(filterURL, function (response, status) {
         if (status == "error") {
             console.log("gadbad ho rahi");
             console.log("error occured");
         }
-    });
+    });*/
 
+    window.location.href = filterURL;
 }
-
-var city = "all";
-var minBudget = 0;
-var maxBudget = 2147483647;
-var page = 1;
-
 
 $(document).ready(function () {
     console.log("ready ready");
@@ -32,6 +32,11 @@ $(document).ready(function () {
 
 
     $('#previousResult').click(function () {
+        var url = new URL(window.location.href);
+        var page = url.searchParams.get("page");
+        if (page == null) {
+            page = 1;
+        }
         page -= 1;
         if ($('#nextResult').is(':disabled')) {
             $('#nextResult').prop('disabled', false);
@@ -39,13 +44,18 @@ $(document).ready(function () {
         if (page == 1) {
             $('#previousResult').prop('disabled', true);
         }
-        loadData();
+        loadData(page, url.searchParams.get("city"), url.searchParams.get("minBudget"), url.searchParams.get("maxBudget"));
     });
 
     $('#nextResult').click(function () {
+        var url = new URL(window.location.href);
+        var page = url.searchParams.get("page");
+        if (page == null) {
+            page = 1;
+        }
         page += 1;
         $('#previousResult').prop('disabled', false);
-        loadData();
+        loadData(page, url.searchParams.get("city"), url.searchParams.get("minBudget"), url.searchParams.get("maxBudget"));
     });
 
     $('#filterSearch').click(function () {
@@ -55,8 +65,13 @@ $(document).ready(function () {
         page = 1;
         $('#previousResult').prop('disabled', true);
         $('#nextResult').prop('disabled', false);
-        loadData();
+        loadData(1, city, minBudget, maxBudget);
     });
+
+    /*$('.search').on('click', 'button', function () {
+        var id = $(this).parent().find(".car_id").text();
+        window.location.href = "/StockDetail/Info/" + id;
+    });*/
 
     $('.search').click(function () {
         var id = $(this).parent().find(".car_id").text();
